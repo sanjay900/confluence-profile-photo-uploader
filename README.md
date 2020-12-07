@@ -1,4 +1,4 @@
-﻿# Confluence Profile Photo Uploader #
+﻿﻿# Confluence Profile Photo Uploader 
 Unfortunately, Confluence does not have a way for administrators to bulk upload user profile photos into it. For corporate organizations that want to make sure that user photos are uniform and professional this is somewhat cumbersome. As a result Confluence may have user profiles with Mickey Mouse, Wolverine, or worse as the photo ... don't get me wrong Wolverine is pretty cool, just not professional.
 
 This utility allows you to sweep in photos in a specified folder with a file mask of "%username%.%extension%" into Confluence. The utility will accept .jpg, .jpeg, .tif, .tiff, .png, and .bmp files. Optionally, you can specify a folder to archive the swept-in photos to after they have been uploaded. Confluence profile photos are 48x48 pixels and since most photos are not square the utility will attempt to do face detection and crop the photo to the largest face in the photo. If the photo is already square you can opt to have the utility not perform the face detection. I am personally not smart enough to write face detection algorithms, so I am using [EMGU/OpenCV](http://www.emgu.com/wiki/index.php/Main_Page "EMGU/OpenCV") to do the face detection (which is why the compiled version is so freakin big). Hey, I got no problem standing on the shoulders of giants.
@@ -22,6 +22,11 @@ This uses the standard APIs that come with Confluence. So, in order for it to wo
 If you run the utility with the command line switch of /h, or if you click the "?" in the program bar of the GUI you will get the help screen. It has some helpful information regarding file masks and some general utility information. Also, each input field has a tooltip that is displayed when you hover over it decribing what that input field does. Finally, feel free to contact me directly at fredclown at gmail if you need other help that isn't in the help screen. If you run across any bugs I would love to know about them. So, feel free to create a bug report on the issues tab and I will attempt to diagnose and fix it. This works great on my installs, but I have not done extensive testing outside of that, so there could very well be bugs.
 
 ## Versions ##
+v1.4.0.0 (2020-12-07)
+Cloned from https://bitbucket.org/fredclown/confluence-profile-photo-uploader (via archive.org)
+Support 256x256 profile images
+Fix some odd bugs
+
 v1.3.0.0 (2015-03-31)  
 Added email option for version updates and failed face detection when running in headless mode  
 Added tabbed config interface  
