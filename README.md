@@ -3,6 +3,10 @@ Unfortunately, Confluence does not have a way for administrators to bulk upload 
 
 This utility allows you to sweep in photos in a specified folder with a file mask of "%username%.%extension%" into Confluence. The utility will accept .jpg, .jpeg, .tif, .tiff, .png, and .bmp files. Optionally, you can specify a folder to archive the swept-in photos to after they have been uploaded. Confluence profile photos are 48x48 pixels and since most photos are not square the utility will attempt to do face detection and crop the photo to the largest face in the photo. If the photo is already square you can opt to have the utility not perform the face detection. I am personally not smart enough to write face detection algorithms, so I am using [EMGU/OpenCV](http://www.emgu.com/wiki/index.php/Main_Page "EMGU/OpenCV") to do the face detection (which is why the compiled version is so freakin big). Hey, I got no problem standing on the shoulders of giants.
 
+This project requires a few libraries, extract both of the below folders to the repository, and then add all of the files in deps as libraries inside visual studio.
+* https://github.com/sanjay900/confluence-profile-photo-uploader/releases/download/v1.4.0.0/x86.zip
+* https://github.com/sanjay900/confluence-profile-photo-uploader/releases/download/v1.4.0.0/deps.zip
+
 ## Configuration ##
 The ConfluenceProfilePhotos.exe.Config files contains the configuration for the utility. If you launch the utility without any command line switches you will get a GUI that will allow you to edit the config.
 ### Passwords ###
